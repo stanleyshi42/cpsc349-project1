@@ -2,34 +2,45 @@
 site: Pet Photos
 ---
 <!DOCTYPE html>
+<html>
+
 <head>
     <link rel="stylesheet" href="https://unpkg.com/mvp.css">
     <title>{{ site }}</title>
+    <h2> Simple pagination</h2>
+    <div class "a">
+        {% for photo in collections.photos %}
+        <a href="{{ photo.url }}">{{forloop.index}}</a>
+        {% endfor %}
+    </div>
 </head>
 <header>
-    <h1> 
+    <h1>
         <img src="/../logo.png" alt="logo" width="35" height="35">
-        <font size = 16 face = "didot">{{ site }}</font>
+        <font size=16 face="didot">{{ site }}</font>
     </h1>
-    
-    <a href="/">Home</a> 
+
+    <a href="/">Home</a>
     <a>&nbsp</a>
     <a href="">About Us</a>
 </header>
+
 <body>
     {{ content }}
 
     <ul>
         {% for photo in collections.photos %}
-            <li>
-                <a href="{{ photo.url }}">
-                    A {{ photo.data.photo_keyword }} photo
-                    by {{ photo.data.photographer_first_name}} {{ photo.data.photographer_last_name }}
-                </a>
-            </li>
+        <li>
+            <a href="{{ photo.url }}">
+                A {{ photo.data.photo_keyword }} photo
+                by {{ photo.data.photographer_first_name}} {{ photo.data.photographer_last_name }}
+            </a>
+        </li>
         {% endfor %}
     </ul>
 </body>
 <footer>
     <font color="grey">&copy; Copyright 2021 Team 5</font>
 </footer>
+
+</html>
