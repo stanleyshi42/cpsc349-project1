@@ -29,9 +29,13 @@ site: Pet Photos
     
 </header>
 
-<body>
+<body style="background-color:{{ color_keyword }};">
     {{ content }}
 
+    {% if photographer_username %}
+        <p>Photo by https://unsplash.com/@{{ photographer_username }}</p>
+    {% endif %}
+    
     <ul>
         {% for photo in collections.photos %}
         <li>
