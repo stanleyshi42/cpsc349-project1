@@ -27,9 +27,10 @@ site: Pet Photos
     <a href="">About Us</a>
 </header>
 
-<body>
+<body style="background-color:{{ color_keyword }};">
     {{ content }}
-
+    <p>Photo by https://unsplash.com/@{{ photographer_username }}</p>
+    
     <ul>
         {% for photo in collections.photos %}
         <li>
