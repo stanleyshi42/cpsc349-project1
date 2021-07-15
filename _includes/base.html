@@ -1,5 +1,6 @@
 ---
 site: Pet Photos
+layout: detail
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +11,8 @@ site: Pet Photos
     <title>{{ site }}</title>
 
     <h2> Simple pagination</h2>
-    <div class = "a">
+
+    <div>
         {% for photo in collections.photos %}
             <a href="{{ photo.url }}">{{forloop.index}}</a>
         {% endfor %}
@@ -35,21 +37,7 @@ site: Pet Photos
     </header>
 
     {{ content }}
-
-    {% if photographer_username %}
-        <p>Photo by https://unsplash.com/@{{ photographer_username }}</p>
-    {% endif %}
-    
-    <ul>
-        {% for photo in collections.photos %}
-        <li>
-            <a href="{{ photo.url }}">
-                A {{ photo.data.photo_keyword }} photo
-                by {{ photo.data.photographer_first_name}} {{ photo.data.photographer_last_name }}
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
+</body>
 
     <footer>
         <p>
