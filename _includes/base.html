@@ -8,28 +8,32 @@ site: Pet Photos
     <link rel="stylesheet" href="https://unpkg.com/mvp.css">
     <meta charset="UTF-8">
     <title>{{ site }}</title>
+
     <h2> Simple pagination</h2>
-    <div class "a">
+    <div class = "a">
         {% for photo in collections.photos %}
-        <a href="{{ photo.url }}">{{forloop.index}}</a>
+            <a href="{{ photo.url }}">{{forloop.index}}</a>
         {% endfor %}
     </div>
 </head>
 
-<header>
-    <h1>
-        <img src="https://cdn.shopify.com/s/files/1/0099/9562/files/Header-Icon-Logo.png?14597416339728210630" alt="logo" width="35" height="35">
-        <font size=16 face="didot">{{ site }}</font>
-    </h1>
-    <nav>
-        <a href="/">Home</a>
-        &nbsp;
-        <a href="">About Us</a>
-    </nav>
-    
-</header>
-
 <body style="background-color:{{ color_keyword }};">
+    <header>
+        <h1>
+            <img src="https://cdn.shopify.com/s/files/1/0099/9562/files/Header-Icon-Logo.png?14597416339728210630" alt="logo" width="35" height="35">
+            <font size=16 face="didot">{{ site }}</font>
+        </h1>
+    
+        <nav>
+            <a href="/">Home</a> |
+            <a href="">About Us</a> |
+            <a>Filler</a> |
+            <a>Filler</a> |
+            <a>Filler</a> |
+            <a>Filler</a>
+        </nav>
+    </header>
+
     {{ content }}
 
     {% if photographer_username %}
@@ -49,7 +53,17 @@ site: Pet Photos
 </body>
 
 <footer>
-    <font color="grey">&copy; Copyright 2021 Team 5</font>
+    <div>
+        <font color="grey">&copy; Copyright 2021 Team 5</font>
+    </div>
+
+    <div>
+        <a>Filler</a> |
+        <a>Filler</a> |
+        <a>Filler</a> |
+        <a>Filler</a> |
+        <a>Filler</a>
+    </div>
 </footer>
 
 </html>
