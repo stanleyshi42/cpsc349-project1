@@ -1,6 +1,11 @@
 ---
 title: Welcome
 layout: base
+
+pagination:
+    data: collections.photos
+    size: 10
+    alias: myPhotos
 ---
 <p>
     Pet photos from
@@ -8,3 +13,19 @@ layout: base
         Unsplash
     </a>
 </p>
+<div>
+    {% for photo in myPhotos %}
+    <li>
+        <a href="{{ photo.url }}">
+            A {{ photo.data.photo_keyword }} photo
+            by {{ photo.data.photographer_first_name}} {{ photo.data.photographer_last_name }}
+        </a>
+        <br>{{photo.data.ai_description}}
+    </li>
+    {% endfor %}
+</div>
+
+<nav>
+    {% if pagination.href.previous %}<a href="{{pagination.href.previous}}">Previous</a> {% endif %}
+    {% if pagination.href.next %}<a href="{{pagination.href.next}}">Next</a> {% endif %}
+</nav>
