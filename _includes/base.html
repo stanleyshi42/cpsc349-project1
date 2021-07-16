@@ -3,8 +3,7 @@ layout: detail
 ---
 {{ content }}
 {% if photographer_username %}
-<p>Photo by {{photographer_first_name}} {{photographer_last_name}}: <a href="">https://unsplash.com/@{{
-        photographer_username }}</a></p>
+<p>Photo by {{photographer_first_name}} {{photographer_last_name}}: <a href="https://unsplash.com/@{{photographer_username }}">https://unsplash.com/@{{photographer_username }}</a></p>
 {% endif %}
 
 {% if exif_camera_model %}
