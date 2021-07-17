@@ -29,10 +29,10 @@ pagination:
 
 <nav>
     {% if pagination.href.previous %}<a href="{{pagination.href.previous}}">&lt;-Previous</a> 
-    {% else %}<span>&lt;-Previous</span>{% endif %}
+    {% else %}<span></span>{% endif %}
     
     {{ pagination.pageNumber | plus: 1}}
     
     {% if pagination.href.next %}<a href="{{pagination.href.next}}">Next-&gt;</a>
-    {% else %}<span>Next-&gt;</span>{% endif %}
+    {% else %}<span></span>{% endif %}
 </nav>
