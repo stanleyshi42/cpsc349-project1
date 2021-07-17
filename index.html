@@ -33,6 +33,6 @@ pagination:
     
     {{ pagination.pageNumber | plus: 1}}
     
-    {% if pagination.href.next %}<a href="{{pagination.href.next}}">Next-&gt;</a>
+    {% if pagination.href.next %}<a href="{{pagination.href.next}}" >Next-&gt;</a>
     {% else %}<span></span>{% endif %}
 </nav>
